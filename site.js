@@ -7,7 +7,7 @@
   /* text with **bold** parts: "**Title:** rest of the text" */
   /* text with line breaks: write \n inside the quotes in content.js */
   const nl = (s) => esc(s).replace(/\n/g, "<br>");
-  const rich = (s) => esc(s).replace(/\*\*(.+?)\*\*/g, "<strong>$1</strong>");
+  const rich = (s) => nl(s).replace(/\*\*(.+?)\*\*/g, "<strong>$1</strong>");
 
   const ICONS = {
     flower: '<svg viewBox="0 0 48 48"><circle cx="24" cy="12" r="6"/><path d="M24 18v22M24 28c-8 0-12-5-12-11 6 0 12 4 12 11zM24 28c8 0 12-5 12-11-6 0-12 4-12 11zM14 40h20"/></svg>',
@@ -154,9 +154,9 @@
     $("app").innerHTML = `
     <section class="hero">
       <div class="wrap"><div class="hero-text">
-        <div class="eyebrow">${esc(a.heroEyebrow)}</div>
-        ${a.heroTitle ? `<h1>${esc(a.heroTitle)}</h1>` : ""}
-        ${a.heroText ? `<p>${esc(a.heroText)}</p>` : ""}
+        <div class="eyebrow">${nl(a.heroEyebrow)}</div>
+        ${a.heroTitle ? `<h1>${nl(a.heroTitle)}</h1>` : ""}
+        ${a.heroText ? `<p>${nl(a.heroText)}</p>` : ""}
       </div></div>
       <div class="hero-img" ${bg(a.heroImage, a.heroPosition)}></div>
     </section>
@@ -164,7 +164,7 @@
     <section class="session${i % 2 ? " flip" : ""}"><div class="wrap">
       <div class="session-img" ${bg(b.image, b.imagePosition)}></div>
       <div>
-        ${b.title ? `<h2>${esc(b.title)}</h2>` : ""}
+        ${b.title ? `<h2>${nl(b.title)}</h2>` : ""}
         ${b.paragraphs.map((p) => `<p>${rich(p)}</p>`).join("")}
       </div>
     </div></section>`).join("")}`;
@@ -173,9 +173,14 @@
     const heroImg = document.querySelector(".hero-img");
     const fitBanner = (img) => {
       if (!window.matchMedia("(min-width: 861px)").matches) { heroImg.style.width = ""; heroImg.style.backgroundSize = ""; return; }
-      const wide = (img.naturalWidth / img.naturalHeight) * heroImg.getBoundingClientRect().height;
-      heroImg.style.width = Math.min(wide, heroImg.parentElement.clientWidth * 0.62) + "px";
-      heroImg.style.backgroundSize = "cover";
+      /* heroZoom (content.js): 0 = whole photo, 1 = photo fills the banner (cropped); in between = intermediate */
+      const H = heroImg.getBoundingClientRect().height, Wmax = heroImg.parentElement.clientWidth * 0.62;
+      const nw = img.naturalWidth, nh = img.naturalHeight;
+      const sFit = Math.min(Wmax / nw, H / nh), sFill = Math.max(Wmax / nw, H / nh);
+      const z = Math.min(1, Math.max(0, a.heroZoom ?? 0.5));
+      const s = sFit + z * (sFill - sFit);
+      heroImg.style.width = Math.min(nw * s, Wmax) + "px";
+      heroImg.style.backgroundSize = `${nw * s}px ${nh * s}px`;
     };
     if (a.heroImage) {
       const probe = new Image();

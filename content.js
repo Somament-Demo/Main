@@ -8,9 +8,9 @@ window.SITE = {
 
   /* ---------- General ---------- */
   brand: {
-    name: "SOMAMENT",              // logo text in the header
+    name: "ESTIBALIZALQUIMIA",              // logo text in the header
     subtitle: "",                  // small line under the logo (e.g. "MUJER ALQUIMIA"), leave "" for none
-    whatsapp: "34600000000",       // number with country code, no + or spaces
+    whatsapp: "34622035176",       // number with country code, no + or spaces
     whatsappMessage: "Hola, quiero reservar una sesión",
     bookLabel: "Reservar sesión"   // button in the header
   },
@@ -25,9 +25,9 @@ window.SITE = {
 
   /* ---------- Home page ---------- */
   home: {
-    eyebrow: "TERAPIA SOMÁTICA · REIKI · TAROT · LIMPIEZA ENERGÉTICA",
-    title: "Escucharte también es cuidarte.",
-    text: "Un espacio para parar, sentir y reconectar contigo. Te acompaño a encontrar aquello que necesitas, desde una mirada cercana, consciente y respetuosa.",
+    eyebrow: "TERAPIA SOMÁTICA · REIKI · TAROT · CANALIZACIÓN · LIMPIEZA ENERGÉTICA · RITUAL ALQUIMIA",
+    title: "Te acompaño en tu propio proceso alquímico",
+    text: "Sesiones de autoconocimiento, liberación y transformación. Un espacio para reconectar contigo y recuperar tu soberanía.",
     button: "Quiero reservar una sesión",
     /* Hero picture. Three ways to set it up (choose with imageStyle):
        "fade"   = photo on the right that fades into the beige (current)
@@ -42,7 +42,7 @@ window.SITE = {
   sessionsIntro: {
     title: "Encuentra el espacio que necesitas",
     text: "Cada sesión es única, como tú. Explora las opciones y elige la que más resuene contigo.",
-    linkLabel: "Ver sesiones"
+    linkLabel: "Ver sesión"
   },
 
   /* ---------- Sessions / services (add / remove / reorder blocks freely) ----------
@@ -53,11 +53,36 @@ window.SITE = {
      In any text you can put **double asterisks** around words to make them bold.
      Optional lines (delete them when you don't need them): quote, bullets, closing, priceExtra, special, note.
 
-     Photos: "image" = photo next to the text, "heroImage" = photo in the top banner.
-     By default both use the same file (images/servicio-....jpg). To use a better photo, replace that file
+     Photos: "heroImage" = photo in the top banner (images/servicio-....-banner.jpg),
+     "image" = photo next to the text (images/servicio-....jpg). To use a better photo, replace that file
      with a higher resolution one that has the SAME file name. No need to change anything in this file.
      heroPosition / imagePosition = which part of the photo stays visible, e.g. "center 30%".        */
   sessions: [
+    {
+      id: "somatica",
+      name: "Terapia Somática",
+      icon: "flower",
+      short: "Conecta con tu cuerpo, libera tensiones y recupera el equilibrio.",
+      heroEyebrow: "TERAPIA SOMÁTICA",
+      heroTitle: "Habitar el cuerpo, volver a ti",
+      heroText: "Una sesión de exploración y acompañamiento a través del cuerpo, las sensaciones y la conciencia corporal. Para que puedas sentir, liberar y reconectar con tu fuerza vital.",
+      heroButton: "Conoce más sobre esta sesión",
+      heroImage: "images/servicio-terapia-somatica-banner.jpg",
+      heroPosition: "center 38%",
+      image: "images/servicio-terapia-somatica.jpg",
+      imagePosition: "center 40%",
+      title: "Terapia somática",
+      quote: "Tu cuerpo guarda lo que no se dice. Escucharlo también es sanar.",
+      paragraphs: [
+        "Un espacio de escucha y exploración a través del cuerpo, las sensaciones y la conciencia corporal.",
+        "Un acompañamiento personalizado de profundo autoconocimiento para conectar con tu cuerpo y adentrarte en un proceso de autodescubrimiento, explorando y atendiendo aquello que emerge durante la sesión. Cada sesión es única y se adapta a tus necesidades y a lo que emerge en cada encuentro."
+      ],
+      duration: "60 minutos",
+      location: "Online · Presencial · Con cita previa",
+      priceOnline: "88 €",
+      pricePresencial: "99 €",
+      special: "Tarifa especial para personas residentes en países de Centroamérica y Sudamérica con bajos ingresos: 55 €."
+    },
     {
       id: "reiki",                           // used in the page address: sesion.html?s=reiki
       name: "Reiki Chamánico",
@@ -66,8 +91,8 @@ window.SITE = {
       heroEyebrow: "SANACIÓN · ENERGÍA · TRANSFORMACIÓN",
       heroTitle: "Un espacio para volver a ti",
       heroText: "Te acompaño en tu proceso de transformación a través del trabajo energético, la sabiduría ancestral y la escucha profunda.",
-      heroButton: "Conoce mis sesiones",
-      heroImage: "images/servicio-reiki-chamanico.jpg",
+      heroButton: "Conoce más sobre esta sesión",
+      heroImage: "images/servicio-reiki-chamanico-banner.jpg",
       heroPosition: "center 30%",
       image: "images/servicio-reiki-chamanico.jpg",
       imagePosition: "center 40%",
@@ -84,61 +109,6 @@ window.SITE = {
       special: "Tarifa especial para personas residentes en países de Centroamérica y Sudamérica con bajos ingresos: 55 €."
     },
     {
-      id: "limpieza",
-      name: "Limpieza Energética",
-      icon: "leaf",
-      short: "Libera bloqueos, renueva tu vitalidad y siente la ligereza de lo que fluye.",
-      heroEyebrow: "LIMPIEZA ENERGÉTICA",
-      heroTitle: "Ritual de limpieza energética y protección chamánica profunda",
-      heroText: "Con mapacho (tabaco sagrado), sahumerios y poderosas hierbas del Perú.",
-      heroButton: "Conoce más sobre esta sesión",
-      heroImage: "images/servicio-limpieza-energetica.jpg",
-      heroPosition: "center 45%",
-      image: "images/servicio-limpieza-energetica.jpg",
-      imagePosition: "center 45%",
-      title: "Limpieza energética",
-      paragraphs: [
-        "Un trabajo dirigido a liberar bloqueos y limpiar cargas energéticas, incluyendo el mal de ojo y energías densas, favoreciendo la renovación, la armonización y la protección energética. Las limpiezas pueden realizarse tanto a personas como a espacios, adaptando el ritual a las necesidades de cada caso.",
-        "**Opcional (solo presencial):** baño de florecimiento con flores frescas, hierbas dulces, esencias y resinas después de la limpieza energética profunda. Es una práctica chamánica traída con mucho respeto y amor desde la Amazonía, utilizada para renovar el espíritu, atraer estados de bienestar, prosperidad y apertura vital."
-      ],
-      duration: "60 minutos (90 minutos con baño de florecimiento)",
-      location: "Online · Presencial · Con cita previa",
-      priceOnline: "88 €",
-      pricePresencial: "99 €",
-      priceExtra: "Limpieza + baño de florecimiento (solo presencial): **111 €**",
-      special: "Tarifa especial para personas residentes en países de Centroamérica y Sudamérica con bajos ingresos: 55 €.",
-      note: "En las limpiezas presenciales de espacios se aplica un suplemento por desplazamiento según los kilómetros recorridos."
-    },
-    {
-      id: "ritual-alquimia",
-      name: "Ritual Alquimia",
-      icon: "sun",
-      short: "Una experiencia integrativa y alquímica para tu cuerpo, mente y espíritu.",
-      heroEyebrow: "RITUAL ALQUIMIA",
-      heroTitle: "Una experiencia integrativa y alquímica para tu cuerpo, mente y espíritu.",
-      heroText: "Un encuentro contigo para sentirte y reconectar con tu esencia, tu poder y soberanía.",
-      heroButton: "Conoce más sobre esta sesión",
-      heroImage: "images/servicio-ritual-alquimia.jpg",
-      heroPosition: "center 68%",
-      image: "images/servicio-ritual-alquimia.jpg",
-      imagePosition: "center 65%",
-      title: "Ritual Alquimia",
-      paragraphs: [
-        "Un espacio para cuidarte, escucharte, reconectar contigo y alquimizar lo que surja durante la sesión, acompañándote en tu proceso de autoconocimiento, transformación y soberanía personal. Integramos diferentes herramientas que se complementan entre sí, siempre adaptándonos a tu momento y a tus necesidades:"
-      ],
-      bullets: [
-        "**Terapia somática:** conectar con tu cuerpo, escuchar sus sensaciones y atender aquello que, desde su propia inteligencia, necesita emerger.",
-        "**Limpieza energética:** ritual de limpieza y protección chamánica profunda con mapacho, sahumerios y hierbas del Perú.",
-        "**Reiki chamánico:** ajuste, reestructuración y armonización de bloqueos con cristales, péndulo, aromas e instrumentos.",
-        "**Tarot transpersonal:** una herramienta de exploración y reflexión para abrir nuevas perspectivas y profundizar en tu mundo interno."
-      ],
-      duration: "90 minutos",
-      location: "Online · Presencial · Con cita previa",
-      priceOnline: "99 €",
-      pricePresencial: "111 €",
-      special: "Tarifa especial para personas residentes en países de Centroamérica y Sudamérica con bajos ingresos: 77 €."
-    },
-    {
       id: "tarot",
       name: "Tarot Transpersonal",
       icon: "moon",
@@ -147,7 +117,7 @@ window.SITE = {
       heroTitle: "Un espacio para comprender lo que estás viviendo y abrir nuevas perspectivas.",
       heroText: "A través del tarot, exploramos las situaciones que atraviesas, tus procesos personales y aquello que puede estar operando en planos más profundos de tu experiencia.",
       heroButton: "Conoce más sobre esta sesión",
-      heroImage: "images/servicio-tarot-transpersonal.jpg",
+      heroImage: "images/servicio-tarot-transpersonal-banner.jpg",
       heroPosition: "center 50%",
       image: "images/servicio-tarot-transpersonal.jpg",
       imagePosition: "center 50%",
@@ -179,7 +149,7 @@ window.SITE = {
       heroTitle: "Una mirada profunda hacia tu verdad.",
       heroText: "Una lectura canalizada de tu campo físico, emocional y energético para explorar aquello que emerge de tu cuerpo, tu historia personal, tu linaje y tus vínculos.",
       heroButton: "Conoce más sobre esta sesión",
-      heroImage: "images/servicio-canalizacion-psicosomatica.jpg",
+      heroImage: "images/servicio-canalizacion-psicosomatica-banner.jpg",
       heroPosition: "center 30%",
       image: "images/servicio-canalizacion-psicosomatica.jpg",
       imagePosition: "center 30%",
@@ -201,38 +171,69 @@ window.SITE = {
       special: "Tarifa especial para personas residentes en países de Centroamérica y Sudamérica con bajos ingresos: 55 €."
     },
     {
-      id: "somatica",
-      name: "Terapia Somática",
-      icon: "flower",
-      short: "Conecta con tu cuerpo, libera tensiones y recupera el equilibrio.",
-      heroEyebrow: "TERAPIA SOMÁTICA",
-      heroTitle: "Habitar el cuerpo, volver a ti",
-      heroText: "Una sesión de exploración y acompañamiento a través del cuerpo, las sensaciones y la conciencia corporal. Para que puedas sentir, liberar y reconectar con tu fuerza vital.",
+      id: "limpieza",
+      name: "Limpieza Energética",
+      icon: "leaf",
+      short: "Libera bloqueos, renueva tu vitalidad y siente la ligereza de lo que fluye.",
+      heroEyebrow: "LIMPIEZA ENERGÉTICA",
+      heroTitle: "Ritual de limpieza energética y protección chamánica profunda",
+      heroText: "Con mapacho (tabaco sagrado), sahumerios y poderosas hierbas del Perú.",
       heroButton: "Conoce más sobre esta sesión",
-      heroImage: "images/servicio-terapia-somatica.jpg",
-      heroPosition: "center 38%",
-      image: "images/servicio-terapia-somatica.jpg",
-      imagePosition: "center 40%",
-      title: "Terapia somática",
-      quote: "Tu cuerpo guarda lo que no se dice. Escucharlo también es sanar.",
+      heroImage: "images/servicio-limpieza-energetica-banner.jpg",
+      heroPosition: "center 45%",
+      image: "images/servicio-limpieza-energetica.jpg",
+      imagePosition: "center 45%",
+      title: "Limpieza energética",
       paragraphs: [
-        "Un espacio de escucha y exploración a través del cuerpo, las sensaciones y la conciencia corporal.",
-        "Un acompañamiento personalizado de profundo autoconocimiento para conectar con tu cuerpo y adentrarte en un proceso de autodescubrimiento, explorando y atendiendo aquello que emerge durante la sesión. Cada sesión es única y se adapta a tus necesidades y a lo que emerge en cada encuentro."
+        "Un trabajo dirigido a liberar bloqueos y limpiar cargas energéticas, incluyendo el mal de ojo y energías densas, favoreciendo la renovación, la armonización y la protección energética. Las limpiezas pueden realizarse tanto a personas como a espacios, adaptando el ritual a las necesidades de cada caso.",
+        "**Opcional (solo presencial):** baño de florecimiento con flores frescas, hierbas dulces, esencias y resinas después de la limpieza energética profunda. Es una práctica chamánica traída con mucho respeto y amor desde la Amazonía, utilizada para renovar el espíritu, atraer estados de bienestar, prosperidad y apertura vital."
       ],
-      duration: "60 minutos",
+      duration: "60 minutos (90 minutos con baño de florecimiento)",
       location: "Online · Presencial · Con cita previa",
       priceOnline: "88 €",
       pricePresencial: "99 €",
-      special: "Tarifa especial para personas residentes en países de Centroamérica y Sudamérica con bajos ingresos: 55 €."
+      priceExtra: "Limpieza + baño de florecimiento (solo presencial): **111 €**",
+      special: "Tarifa especial para personas residentes en países de Centroamérica y Sudamérica con bajos ingresos: 55 €.",
+      note: "En las limpiezas presenciales de espacios se aplica un suplemento por desplazamiento según los kilómetros recorridos."
+    },
+    {
+      id: "ritual-alquimia",
+      name: "Ritual Alquimia",
+      icon: "sun",
+      short: "Una experiencia integrativa y alquímica para tu cuerpo, mente y espíritu.",
+      heroEyebrow: "RITUAL ALQUIMIA",
+      heroTitle: "Una experiencia integrativa y alquímica para tu cuerpo, mente y espíritu.",
+      heroText: "Un encuentro contigo para sentirte y reconectar con tu esencia, tu poder y soberanía.",
+      heroButton: "Conoce más sobre esta sesión",
+      heroImage: "images/servicio-ritual-alquimia-banner.jpg",
+      heroPosition: "center 68%",
+      image: "images/servicio-ritual-alquimia.jpg",
+      imagePosition: "center 65%",
+      title: "Ritual Alquimia",
+      paragraphs: [
+        "Un espacio para cuidarte, escucharte, reconectar contigo y alquimizar lo que surja durante la sesión, acompañándote en tu proceso de autoconocimiento, transformación y soberanía personal. Integramos diferentes herramientas que se complementan entre sí, siempre adaptándonos a tu momento y a tus necesidades:"
+      ],
+      bullets: [
+        "**Terapia somática:** conectar con tu cuerpo, escuchar sus sensaciones y atender aquello que, desde su propia inteligencia, necesita emerger.",
+        "**Limpieza energética:** ritual de limpieza y protección chamánica profunda con mapacho, sahumerios y hierbas del Perú.",
+        "**Reiki chamánico:** ajuste, reestructuración y armonización de bloqueos con cristales, péndulo, aromas e instrumentos.",
+        "**Tarot transpersonal:** una herramienta de exploración y reflexión para abrir nuevas perspectivas y profundizar en tu mundo interno."
+      ],
+      duration: "90 minutos",
+      location: "Online · Presencial · Con cita previa",
+      priceOnline: "99 €",
+      pricePresencial: "111 €",
+      special: "Tarifa especial para personas residentes en países de Centroamérica y Sudamérica con bajos ingresos: 77 €."
     }
   ],
 
   /* ---------- About (home block + "Sobre mí" page) ---------- */
   about: {
-    eyebrow: "SOBRE SOMAMENT",
+    eyebrow: "SOBRE MÍ",
     title: "Un acompañamiento cercano, consciente y respetuoso.",
     paragraphs: [
-      "Soy Somament, y a través de la terapia somática, el Reiki, el tarot y la limpieza energética, te ofrezco un espacio seguro donde puedas parar, sentir y reconectar con lo que necesitas.",
+      "Soy Estíbaliz y, desde mi propio camino de transformación, integro mi historia, mis formaciones, mis aprendizajes y mi alquimia para acompañarte en el tuyo.",
+      "Te ofrezco un espacio seguro donde puedas parar, sentir y reconectar con lo que necesitas en este momento de tu vida.",
       "Cada sesión es un encuentro contigo, una oportunidad para escuchar tu cuerpo, tu energía y tu intuición."
     ],
     button: "Conoce más sobre mí",
@@ -248,13 +249,44 @@ window.SITE = {
     bandQuote: "Tu proceso también es mi camino"
   },
 
+  /* ---------- "Conoce más sobre mí" page (sobre-mi.html) ----------
+     Photos: heroImage = top banner, image = photo next to each block. Replace the files with the SAME name. */
+  aboutPage: {
+    heroEyebrow: "CONOCE MÁS SOBRE MÍ",
+    heroTitle: "Mi historia personal, mi alquimia",
+    heroText: "",                                   // optional line under the title, "" for none
+    heroImage: "images/sobre-mi-banner.jpg",
+    heroPosition: "center 30%",
+    blocks: [
+      {
+        image: "images/sobre-mi-historia.jpg",
+        imagePosition: "center 30%",
+        title: "",                                  // optional heading, "" for none
+        paragraphs: [
+          "Mi camino no ha sido lineal. Desde mi infancia y a lo largo de mi vida, he atravesado experiencias desgarradoras de abandono, abusos y situaciones de riesgo vital. Estas vivencias me llevaron a emprender mi propio camino de autoconocimiento, sanación y transformación para salir del bucle de sufrimiento en el que sobrevivía.",
+          "Fue un camino de presencia, escucha y reencuentro conmigo misma, con mis propias sombras y luces. Un proceso alquímico que me permitió transformar el miedo en amor y descubrir una nueva manera de habitarme, relacionarme, comprender la vida y disfrutarla."
+        ]
+      },
+      {
+        image: "images/sobre-mi-formacion.jpg",
+        imagePosition: "center 30%",
+        title: "Mi formación y mi recorrido",
+        paragraphs: [
+          "Me he formado como Terapeuta Integrativa Somática, Psicoterapia Sensoriomotriz con enfoque sensible al trauma, también he profundizado con formaciones en Neurobiología Interpersonal, Mindfulness y Comunicación No Violenta.",
+          "Mi camino personal de sanación me acercó a las plantas maestras, a través de las cuales viví una experiencia profundamente terapéutica. Más adelante, mi búsqueda espiritual me llevó a conocer y aprender de las tradiciones, ceremonias y rituales ancestrales de distintos sabedores indígenas, con quienes continúo aprendiendo en mi camino como mujer medicina, acogiendo sus conocimientos y enseñanzas con profunda humildad, gratitud y respeto.",
+          "Este recorrido ha enriquecido mi práctica terapéutica, ampliando mi mirada e incorporando una dimensión energética y espiritual que dialoga con mi formación psicológica y somática."
+        ]
+      }
+    ]
+  },
+
   /* ---------- Contact page ---------- */
   contact: {
     title: "Contacto",
     text: "Escríbeme y encontramos juntas la sesión que mejor te acompañe.",
     whatsappLabel: "Escríbeme por WhatsApp",
-    email: "hola@example.com",
-    instagram: "https://instagram.com/tuusuario",
+    email: "contacto.somament@gmail.com",
+    instagram: "https://instagram.com/estibaliz.mujeralquimia",
     instagramLabel: "Instagram"
   },
 

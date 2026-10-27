@@ -12,17 +12,16 @@ HOW TO REPLACE A PHOTO WITH A BETTER ONE
   Use another file name? Then also change the path in content.js.
 
 
-SERVICE PHOTOS  (each one is used twice: in the top banner and next to the text)
-  servicio-reiki-chamanico.jpg              Reiki Chamánico
-  servicio-limpieza-energetica.jpg          Limpieza Energética
-  servicio-ritual-alquimia.jpg              Ritual Alquimia
-  servicio-tarot-transpersonal.jpg          Tarot Transpersonal
-  servicio-canalizacion-psicosomatica.jpg   Canalización Psicosomática
-  servicio-terapia-somatica.jpg             Terapia Somática
-
-  In content.js you can also give the banner and the side photo two different files
-  ("heroImage" and "image") and choose which part of the photo stays visible
-  ("heroPosition" and "imagePosition").
+SERVICE PHOTOS  (two per service: a wide BANNER photo at the top and a BODY photo next to the text)
+  Banner (top of page)                          Body (next to the text)                  Service
+  servicio-terapia-somatica-banner.jpg          servicio-terapia-somatica.jpg            Terapia Somática
+  servicio-reiki-chamanico-banner.jpg           servicio-reiki-chamanico.jpg             Reiki Chamánico
+  servicio-tarot-transpersonal-banner.jpg       servicio-tarot-transpersonal.jpg         Tarot Transpersonal
+  servicio-canalizacion-psicosomatica-banner.jpg servicio-canalizacion-psicosomatica.jpg Canalización Psicosomática
+  servicio-limpieza-energetica-banner.jpg       servicio-limpieza-energetica.jpg         Limpieza Energética
+  servicio-ritual-alquimia-banner.jpg           servicio-ritual-alquimia.jpg             Ritual Alquimia
+  (For now each banner file is a copy of the body photo. Replace it with your own wide photo.)
+  Banner: landscape, at least 1920 px wide. Body: portrait, at least 1200 px wide.
 
 
 HOME PAGE
@@ -30,9 +29,13 @@ HOME PAGE
   hero-background.jpg  Background behind her (plant and shadows)
 
 
-STILL TO ADD
-  about.jpg            Photo for the "Sobre mí" parts (home page, "Sobre mí" page and the
-                       bottom of every service page). Until it is added, those areas stay beige.
+"SOBRE MÍ" PHOTOS
+  about.jpg               (added) Photo on the home page ("Sobre mí" block) and in the bottom band of the pages.
+                          The handwritten quote on top is text from content.js, not part of the photo, so use a photo WITHOUT text.
+  Still to add (until they exist those areas stay beige):
+  sobre-mi-banner.jpg     "Conoce más sobre mí" page: wide photo in the top banner
+  sobre-mi-historia.jpg   "Conoce más sobre mí" page: photo next to "Mi historia personal"
+  sobre-mi-formacion.jpg  "Conoce más sobre mí" page: photo next to "Mi formación y mi recorrido"
 
 
 NOT USED AT THE MOMENT

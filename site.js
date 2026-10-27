@@ -147,7 +147,25 @@
   }
 
   if (page === "about") {
-    $("app").innerHTML = aboutBlock().replace('href="sobre-mi.html"', `href="${waLink()}" target="_blank"`) + band();
+    const a = S.aboutPage;
+    document.title = `Sobre mí · ${S.brand.name}`;
+    $("app").innerHTML = `
+    <section class="hero">
+      <div class="wrap"><div class="hero-text">
+        <div class="eyebrow">${esc(a.heroEyebrow)}</div>
+        <h1>${esc(a.heroTitle)}</h1>
+        ${a.heroText ? `<p>${esc(a.heroText)}</p>` : ""}
+      </div></div>
+      <div class="hero-img" ${bg(a.heroImage, a.heroPosition)}></div>
+    </section>
+    ${a.blocks.map((b, i) => `
+    <section class="session${i % 2 ? " flip" : ""}"><div class="wrap">
+      <div class="session-img" ${bg(b.image, b.imagePosition)}></div>
+      <div>
+        ${b.title ? `<h2>${esc(b.title)}</h2>` : ""}
+        ${b.paragraphs.map((p) => `<p>${rich(p)}</p>`).join("")}
+      </div>
+    </div></section>`).join("")}`;
   }
 
   if (page === "contact") {

@@ -25,9 +25,9 @@ window.SITE = {
 
   /* ---------- Home page ---------- */
   home: {
-    eyebrow: "TERAPIA SOMÁTICA · REIKI · TAROT · CANALIZACIÓN · LIMPIEZA ENERGÉTICA · RITUAL ALQUIMIA",
+    eyebrow: "TERAPIA SOMÁTICA · REIKI · TAROT\nCANALIZACIÓN · LIMPIEZA ENERGÉTICA\nRITUAL ALQUIMIA",
     title: "Te acompaño en tu propio proceso alquímico",
-    text: "Sesiones de autoconocimiento, liberación y transformación. Un espacio para reconectar contigo y recuperar tu soberanía.",
+    text: "Sesiones de autoconocimiento, liberación y transformación.\nUn espacio para reconectar contigo y recuperar tu soberanía.",
     button: "Quiero reservar una sesión",
     /* Hero picture. Three ways to set it up (choose with imageStyle):
        "fade"   = photo on the right that fades into the beige (current)
@@ -42,7 +42,8 @@ window.SITE = {
   sessionsIntro: {
     title: "Encuentra el espacio que necesitas",
     text: "Cada sesión es única, como tú. Explora las opciones y elige la que más resuene contigo.",
-    linkLabel: "Ver sesión"
+    linkLabel: "Ver sesión",
+    detailLabel: "SESIÓN"          // small label above the title on each session page
   },
 
   /* ---------- Sessions / services (add / remove / reorder blocks freely) ----------
@@ -62,9 +63,9 @@ window.SITE = {
       id: "somatica",
       name: "Terapia Somática",
       icon: "flower",
-      short: "Conecta con tu cuerpo, libera tensiones y recupera el equilibrio.",
+      short: "Conecta con tu cuerpo, libera patrones\ny recupera el equilibrio.",
       heroEyebrow: "TERAPIA SOMÁTICA",
-      heroTitle: "Habitar el cuerpo, volver a ti",
+      heroTitle: "Habitar el cuerpo,\nvolver a ti",
       heroText: "Una sesión de exploración y acompañamiento a través del cuerpo, las sensaciones y la conciencia corporal. Para que puedas sentir, liberar y reconectar con tu fuerza vital.",
       heroButton: "Conoce más sobre esta sesión",
       heroImage: "images/servicio-terapia-somatica-banner.jpg",
@@ -87,10 +88,10 @@ window.SITE = {
       id: "reiki",                           // used in the page address: sesion.html?s=reiki
       name: "Reiki Chamánico",
       icon: "spiral",
-      short: "Armoniza tu energía, calma tu mente y abre espacio a lo nuevo.",
-      heroEyebrow: "SANACIÓN · ENERGÍA · TRANSFORMACIÓN",
-      heroTitle: "Un espacio para volver a ti",
-      heroText: "Te acompaño en tu proceso de transformación a través del trabajo energético, la sabiduría ancestral y la escucha profunda.",
+      short: "Armoniza tu energía, calma tu mente\ny abre espacio a lo nuevo.",
+      heroEyebrow: "REIKI CHAMÁNICO",
+      heroTitle: "Un espacio para\nvolver a ti",
+      heroText: "Te acompaño en tu proceso de transformación a través del trabajo energético y la sabiduría ancestral.",
       heroButton: "Conoce más sobre esta sesión",
       heroImage: "images/servicio-reiki-chamanico-banner.jpg",
       heroPosition: "center 30%",
@@ -112,10 +113,10 @@ window.SITE = {
       id: "tarot",
       name: "Tarot Transpersonal",
       icon: "moon",
-      short: "Una guía para tomar conciencia y ver con más claridad tu camino.",
+      short: "Una guía para tomar conciencia\ny ver con más claridad tu camino.",
       heroEyebrow: "TAROT TRANSPERSONAL",
-      heroTitle: "Un espacio para comprender lo que estás viviendo y abrir nuevas perspectivas.",
-      heroText: "A través del tarot, exploramos las situaciones que atraviesas, tus procesos personales y aquello que puede estar operando en planos más profundos de tu experiencia.",
+      heroTitle: "Un espacio\npara comprender\nlo que estás viviendo\ny abrir nuevas perspectivas.",
+      heroText: "A través del tarot, exploramos las situaciones que atraviesas,\ntus procesos personales y aquello que puede estar operando\nen planos más profundos de tu experiencia.",
       heroButton: "Conoce más sobre esta sesión",
       heroImage: "images/servicio-tarot-transpersonal-banner.jpg",
       heroPosition: "center 50%",
@@ -144,10 +145,10 @@ window.SITE = {
       id: "canalizacion",
       name: "Canalización Psicosomática",
       icon: "lotus",
-      short: "Una lectura canalizada de tu campo físico, emocional y energético.",
+      short: "Una lectura canalizada de tu campo,\nfísico, emocional y energético.",
       heroEyebrow: "CANALIZACIÓN PSICOSOMÁTICA",
       heroTitle: "Una mirada profunda hacia tu verdad.",
-      heroText: "Una lectura canalizada de tu campo físico, emocional y energético para explorar aquello que emerge de tu cuerpo, tu historia personal, tu linaje y tus vínculos.",
+      heroText: "Una lectura canalizada de tu campo, físico, emocional y energético\npara explorar aquello que emerge de tu cuerpo,\ntu historia personal, tu linaje y tus vínculos.",
       heroButton: "Conoce más sobre esta sesión",
       heroImage: "images/servicio-canalizacion-psicosomatica-banner.jpg",
       heroPosition: "center 30%",
@@ -174,10 +175,10 @@ window.SITE = {
       id: "limpieza",
       name: "Limpieza Energética",
       icon: "leaf",
-      short: "Libera bloqueos, renueva tu vitalidad y siente la ligereza de lo que fluye.",
+      short: "Limpieza, armonización y protección chamánica\nde personas y espacios.",
       heroEyebrow: "LIMPIEZA ENERGÉTICA",
-      heroTitle: "Ritual de limpieza energética y protección chamánica profunda",
-      heroText: "Con mapacho (tabaco sagrado), sahumerios y poderosas hierbas del Perú.",
+      heroTitle: "Ritual\nde limpieza energética\ny protección chamánica.",
+      heroText: "Con mapacho (tabaco sagrado),\nsahumerios y poderosas hierbas del Perú.",
       heroButton: "Conoce más sobre esta sesión",
       heroImage: "images/servicio-limpieza-energetica-banner.jpg",
       heroPosition: "center 45%",
@@ -185,8 +186,8 @@ window.SITE = {
       imagePosition: "center 45%",
       title: "Limpieza energética",
       paragraphs: [
-        "Un trabajo dirigido a liberar bloqueos y limpiar cargas energéticas, incluyendo el mal de ojo y energías densas, favoreciendo la renovación, la armonización y la protección energética. Las limpiezas pueden realizarse tanto a personas como a espacios, adaptando el ritual a las necesidades de cada caso.",
-        "**Opcional (solo presencial):** baño de florecimiento con flores frescas, hierbas dulces, esencias y resinas después de la limpieza energética profunda. Es una práctica chamánica traída con mucho respeto y amor desde la Amazonía, utilizada para renovar el espíritu, atraer estados de bienestar, prosperidad y apertura vital."
+        "Un trabajo dirigido a liberar bloqueos y limpiar cargas energéticas, el mal de ojo, corte de lazos y despejar energías densas, favoreciendo la renovación, la armonización y la protección energética. Las limpiezas pueden realizarse tanto a personas como a espacios, adaptando el ritual a las necesidades de cada caso.",
+        "**Opcional (solo presencial):** baño de florecimiento con flores frescas, hierbas dulces, esencias y resinas después de la limpieza energética profunda. Es una práctica chamánica de una comunidad indígena de la Amazonía, utilizada para renovar el espíritu, atraer estados de bienestar, prosperidad y apertura vital."
       ],
       duration: "60 minutos (90 minutos con baño de florecimiento)",
       location: "Online · Presencial · Con cita previa",
@@ -194,16 +195,16 @@ window.SITE = {
       pricePresencial: "99 €",
       priceExtra: "Limpieza + baño de florecimiento (solo presencial): **111 €**",
       special: "Tarifa especial para personas residentes en países de Centroamérica y Sudamérica con bajos ingresos: 55 €.",
-      note: "En las limpiezas presenciales de espacios se aplica un suplemento por desplazamiento según los kilómetros recorridos."
+      note: "!! En las limpiezas presenciales de espacios se aplica un suplemento por tiempo de desplazamiento según los kilómetros recorridos."
     },
     {
       id: "ritual-alquimia",
       name: "Ritual Alquimia",
       icon: "sun",
-      short: "Una experiencia integrativa y alquímica para tu cuerpo, mente y espíritu.",
+      short: "Una experiencia integrativa y alquímica\npara tu cuerpo, mente y espíritu.",
       heroEyebrow: "RITUAL ALQUIMIA",
-      heroTitle: "Una experiencia integrativa y alquímica para tu cuerpo, mente y espíritu.",
-      heroText: "Un encuentro contigo para sentirte y reconectar con tu esencia, tu poder y soberanía.",
+      heroTitle: "Una experiencia integrativa y alquímica para tu cuerpo,\nmente y espíritu.",
+      heroText: "Un encuentro contigo para sentirte y reconectar con tu esencia,\ntu poder y soberanía.",
       heroButton: "Conoce más sobre esta sesión",
       heroImage: "images/servicio-ritual-alquimia-banner.jpg",
       heroPosition: "center 68%",
@@ -232,8 +233,8 @@ window.SITE = {
     eyebrow: "SOBRE MÍ",
     title: "Un acompañamiento cercano, consciente y respetuoso.",
     paragraphs: [
-      "Soy Estíbaliz y, desde mi propio camino de transformación, integro mi historia, mis formaciones, mis aprendizajes y mi alquimia para acompañarte en el tuyo.",
-      "Te ofrezco un espacio seguro donde puedas parar, sentir y reconectar con lo que necesitas en este momento de tu vida.",
+      "Me llamo Estíbaliz y, desde mi propio camino de transformación, integro mi historia, mis formaciones, mis aprendizajes y mi alquimia para acompañarte en el tuyo.",
+      "Te ofrezco un espacio seguro donde puedas parar, sentir y reconectar con lo que necesites en este momento de tu vida.",
       "Cada sesión es un encuentro contigo, una oportunidad para escuchar tu cuerpo, tu energía y tu intuición."
     ],
     button: "Conoce más sobre mí",
@@ -245,7 +246,6 @@ window.SITE = {
       { icon: "leaf",   label: "Herramientas ancestrales" },
       { icon: "sun",    label: "Acompañamiento personalizado" }
     ],
-    bandTitle: "Somament",
     bandQuote: "Tu proceso también es mi camino"
   },
 
@@ -253,15 +253,15 @@ window.SITE = {
      Photos: heroImage = top banner, image = photo next to each block. Replace the files with the SAME name. */
   aboutPage: {
     heroEyebrow: "CONOCE MÁS SOBRE MÍ",
-    heroTitle: "Mi historia personal, mi alquimia",
+    heroTitle: "",                                  // optional big title in the banner, "" for none
     heroText: "",                                   // optional line under the title, "" for none
     heroImage: "images/sobre-mi-banner.jpg",
-    heroPosition: "center 30%",
+    heroPosition: "center",                          // banner photo is always shown whole (not cropped), on the right
     blocks: [
       {
         image: "images/sobre-mi-historia.jpg",
         imagePosition: "center 30%",
-        title: "",                                  // optional heading, "" for none
+        title: "Mi historia personal,\nmi alquimia",   // optional heading, "" for none
         paragraphs: [
           "Mi camino no ha sido lineal. Desde mi infancia y a lo largo de mi vida, he atravesado experiencias desgarradoras de abandono, abusos y situaciones de riesgo vital. Estas vivencias me llevaron a emprender mi propio camino de autoconocimiento, sanación y transformación para salir del bucle de sufrimiento en el que sobrevivía.",
           "Fue un camino de presencia, escucha y reencuentro conmigo misma, con mis propias sombras y luces. Un proceso alquímico que me permitió transformar el miedo en amor y descubrir una nueva manera de habitarme, relacionarme, comprender la vida y disfrutarla."
@@ -270,7 +270,7 @@ window.SITE = {
       {
         image: "images/sobre-mi-formacion.jpg",
         imagePosition: "center 30%",
-        title: "Mi formación y mi recorrido",
+        title: "Mi formación,\nmi recorrido",
         paragraphs: [
           "Me he formado como Terapeuta Integrativa Somática, Psicoterapia Sensoriomotriz con enfoque sensible al trauma, también he profundizado con formaciones en Neurobiología Interpersonal, Mindfulness y Comunicación No Violenta.",
           "Mi camino personal de sanación me acercó a las plantas maestras, a través de las cuales viví una experiencia profundamente terapéutica. Más adelante, mi búsqueda espiritual me llevó a conocer y aprender de las tradiciones, ceremonias y rituales ancestrales de distintos sabedores indígenas, con quienes continúo aprendiendo en mi camino como mujer medicina, acogiendo sus conocimientos y enseñanzas con profunda humildad, gratitud y respeto.",
@@ -292,7 +292,7 @@ window.SITE = {
 
   /* ---------- Footer ---------- */
   footer: {
-    text: "SOMAMENT · BIENESTAR",
+    text: "ESTIBALIZALQUIMIA",
     script: "Vuelve a ti"
   }
 };

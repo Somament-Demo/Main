@@ -5,6 +5,8 @@
   const esc = (s) => String(s ?? "").replace(/[&<>"]/g, (c) => ({ "&": "&amp;", "<": "&lt;", ">": "&gt;", '"': "&quot;" }[c]));
   const bg = (url, pos) => (url ? `style="background-image:url('${esc(url)}')${pos ? `;background-position:${esc(pos)}` : ""}"` : "");
   /* text with **bold** parts: "**Title:** rest of the text" */
+  /* text with line breaks: write \n inside the quotes in content.js */
+  const nl = (s) => esc(s).replace(/\n/g, "<br>");
   const rich = (s) => esc(s).replace(/\*\*(.+?)\*\*/g, "<strong>$1</strong>");
 
   const ICONS = {
@@ -71,7 +73,7 @@
       <div class="band-body">
         <div>
           <div class="eyebrow">SOBRE MÍ</div>
-          <h2>${esc(a.bandTitle)}</h2>
+          ${a.bandTitle ? `<h2>${esc(a.bandTitle)}</h2>` : ""}
           ${a.paragraphs.map((p) => `<p>${esc(p)}</p>`).join("")}
           <div class="script">${esc(a.bandQuote)}<br>♡</div>
         </div>
@@ -88,23 +90,23 @@
     $("app").innerHTML = `
     <section class="hero style-${esc(h.imageStyle || "fade")}${h.background ? " has-bg" : ""}" ${h.background ? bg(h.background) : ""}>
       <div class="wrap"><div class="hero-text">
-        <div class="eyebrow">${esc(h.eyebrow)}</div>
-        <h1>${esc(h.title)}</h1>
-        <p>${esc(h.text)}</p>
+        <div class="eyebrow">${nl(h.eyebrow)}</div>
+        <h1>${nl(h.title)}</h1>
+        <p>${nl(h.text)}</p>
         ${bookBtn(h.button)}
       </div></div>
       <div class="hero-img" ${bg(h.image)}></div>
       <div class="hero-quote script">${esc(h.quote)}<br>${HEART}</div>
     </section>
     <section class="sessions" id="sesiones"><div class="wrap">
-      <h2>${esc(S.sessionsIntro.title)}</h2>
-      <p class="sub">${esc(S.sessionsIntro.text)}</p>
+      <h2>${nl(S.sessionsIntro.title)}</h2>
+      <p class="sub">${nl(S.sessionsIntro.text)}</p>
       <div class="cards">
         ${S.sessions.map((s) => `
           <a class="card" href="sesion.html?s=${esc(s.id)}">
             <div class="icon">${ICONS[s.icon] || ""}</div>
-            <h3>${esc(s.name)}</h3>
-            <p>${esc(s.short)}</p>
+            <h3>${nl(s.name)}</h3>
+            <p>${nl(s.short)}</p>
             <span class="more">${esc(S.sessionsIntro.linkLabel)}${ARROW}</span>
           </a>`).join("")}
       </div>
@@ -119,9 +121,9 @@
     $("app").innerHTML = `
     <section class="hero">
       <div class="wrap"><div class="hero-text">
-        <div class="eyebrow">${esc(s.heroEyebrow)}</div>
-        <h1>${esc(s.heroTitle)}</h1>
-        <p>${esc(s.heroText)}</p>
+        <div class="eyebrow">${nl(s.heroEyebrow)}</div>
+        <h1>${nl(s.heroTitle)}</h1>
+        <p>${nl(s.heroText)}</p>
         <a class="btn" href="#detalle">${esc(s.heroButton)}${ARROW}</a>
       </div></div>
       <div class="hero-img" ${bg(s.heroImage, s.heroPosition)}></div>
@@ -129,7 +131,7 @@
     <section class="session" id="detalle"><div class="wrap">
       <div class="session-img" ${bg(s.image, s.imagePosition)}></div>
       <div>
-        <div class="eyebrow">SESIONES</div>
+        <div class="eyebrow">${esc(S.sessionsIntro.detailLabel || "SESIÓN")}</div>
         <h2>${esc(s.title)}</h2>
         ${s.quote ? `<div class="quote">${esc(s.quote)}</div>` : ""}
         ${(s.paragraphs || []).map((p) => `<p>${rich(p)}</p>`).join("")}
@@ -153,7 +155,7 @@
     <section class="hero">
       <div class="wrap"><div class="hero-text">
         <div class="eyebrow">${esc(a.heroEyebrow)}</div>
-        <h1>${esc(a.heroTitle)}</h1>
+        ${a.heroTitle ? `<h1>${esc(a.heroTitle)}</h1>` : ""}
         ${a.heroText ? `<p>${esc(a.heroText)}</p>` : ""}
       </div></div>
       <div class="hero-img" ${bg(a.heroImage, a.heroPosition)}></div>
@@ -166,6 +168,20 @@
         ${b.paragraphs.map((p) => `<p>${rich(p)}</p>`).join("")}
       </div>
     </div></section>`).join("")}`;
+
+    /* Banner: show the WHOLE photo (no cropping) on the right, fading into the beige on its left side */
+    const heroImg = document.querySelector(".hero-img");
+    const fitBanner = (img) => {
+      if (!window.matchMedia("(min-width: 861px)").matches) { heroImg.style.width = ""; heroImg.style.backgroundSize = ""; return; }
+      const wide = (img.naturalWidth / img.naturalHeight) * heroImg.getBoundingClientRect().height;
+      heroImg.style.width = Math.min(wide, heroImg.parentElement.clientWidth * 0.62) + "px";
+      heroImg.style.backgroundSize = "cover";
+    };
+    if (a.heroImage) {
+      const probe = new Image();
+      probe.onload = () => { fitBanner(probe); window.addEventListener("resize", () => fitBanner(probe)); };
+      probe.src = a.heroImage;
+    }
   }
 
   if (page === "contact") {

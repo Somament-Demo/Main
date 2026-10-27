@@ -3,7 +3,9 @@
   const S = window.SITE;
   const $ = (id) => document.getElementById(id);
   const esc = (s) => String(s ?? "").replace(/[&<>"]/g, (c) => ({ "&": "&amp;", "<": "&lt;", ">": "&gt;", '"': "&quot;" }[c]));
-  const bg = (url) => (url ? `style="background-image:url('${esc(url)}')"` : "");
+  const bg = (url, pos) => (url ? `style="background-image:url('${esc(url)}')${pos ? `;background-position:${esc(pos)}` : ""}"` : "");
+  /* text with **bold** parts: "**Title:** rest of the text" */
+  const rich = (s) => esc(s).replace(/\*\*(.+?)\*\*/g, "<strong>$1</strong>");
 
   const ICONS = {
     flower: '<svg viewBox="0 0 48 48"><circle cx="24" cy="12" r="6"/><path d="M24 18v22M24 28c-8 0-12-5-12-11 6 0 12 4 12 11zM24 28c8 0 12-5 12-11-6 0-12 4-12 11zM14 40h20"/></svg>',
@@ -99,12 +101,12 @@
       <p class="sub">${esc(S.sessionsIntro.text)}</p>
       <div class="cards">
         ${S.sessions.map((s) => `
-          <div class="card">
+          <a class="card" href="sesion.html?s=${esc(s.id)}">
             <div class="icon">${ICONS[s.icon] || ""}</div>
             <h3>${esc(s.name)}</h3>
             <p>${esc(s.short)}</p>
-            <a href="sesion.html?s=${esc(s.id)}">${esc(S.sessionsIntro.linkLabel)}${ARROW}</a>
-          </div>`).join("")}
+            <span class="more">${esc(S.sessionsIntro.linkLabel)}${ARROW}</span>
+          </a>`).join("")}
       </div>
     </div></section>
     ${aboutBlock()}`;
@@ -122,19 +124,23 @@
         <p>${esc(s.heroText)}</p>
         <a class="btn" href="#detalle">${esc(s.heroButton)}${ARROW}</a>
       </div></div>
-      <div class="hero-img" ${bg(s.heroImage)}></div>
+      <div class="hero-img" ${bg(s.heroImage, s.heroPosition)}></div>
     </section>
     <section class="session" id="detalle"><div class="wrap">
-      <div class="session-img" ${bg(s.image)}></div>
+      <div class="session-img" ${bg(s.image, s.imagePosition)}></div>
       <div>
         <div class="eyebrow">SESIONES</div>
         <h2>${esc(s.title)}</h2>
-        <div class="quote">${esc(s.quote)}</div>
-        ${s.paragraphs.map((p) => `<p>${esc(p)}</p>`).join("")}
+        ${s.quote ? `<div class="quote">${esc(s.quote)}</div>` : ""}
+        ${(s.paragraphs || []).map((p) => `<p>${rich(p)}</p>`).join("")}
+        ${s.bullets && s.bullets.length ? `<ul class="points">${s.bullets.map((b) => `<li>${rich(b)}</li>`).join("")}</ul>` : ""}
+        ${s.closing ? `<div class="quote closing">${esc(s.closing)}</div>` : ""}
         <div class="meta"><span>${ICONS.clock}${esc(s.duration)}</span><span>${ICONS.pin}${esc(s.location)}</span></div>
         <div class="prices">Online <b>${esc(s.priceOnline)}</b><span class="dot">·</span>Presencial <b>${esc(s.pricePresencial)}</b></div>
+        ${s.priceExtra ? `<div class="price-extra">${rich(s.priceExtra)}</div>` : ""}
         <a class="btn" href="${waLink()}" target="_blank" rel="noopener">${WA}Reservar por WhatsApp</a>
         ${s.special ? `<div class="special">${ICONS.lotus}<span>${esc(s.special)}</span></div>` : ""}
+        ${s.note ? `<div class="note">${rich(s.note)}</div>` : ""}
       </div>
     </div></section>
     ${band()}`;

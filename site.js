@@ -200,6 +200,14 @@
         ${c.email ? `<a class="btn outline" href="mailto:${esc(c.email)}">${esc(c.email)}</a>` : ""}
         ${c.instagram ? `<a class="btn outline" href="${esc(c.instagram)}" target="_blank" rel="noopener">${esc(c.instagramLabel)}</a>` : ""}
       </div>
+      ${c.mapQuery ? `
+      <div class="location">
+        <h2>${nl(c.mapTitle)}</h2>
+        ${c.address ? `<p class="address">${ICONS.pin}<span>${nl(c.address)}</span></p>` : ""}
+        <iframe class="map" title="${esc(c.mapTitle)}" loading="lazy" referrerpolicy="no-referrer-when-downgrade" allowfullscreen
+          src="https://www.google.com/maps?q=${encodeURIComponent(c.mapQuery)}&z=16&output=embed"></iframe>
+        <a class="btn outline" href="https://www.google.com/maps/search/?api=1&query=${encodeURIComponent(c.mapQuery)}" target="_blank" rel="noopener">${esc(c.mapButton || "Abrir en Google Maps")}${ARROW}</a>
+      </div>` : ""}
     </div></div></section>`;
   }
 

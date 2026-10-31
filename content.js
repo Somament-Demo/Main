@@ -287,7 +287,12 @@ window.SITE = {
     whatsappLabel: "Escríbeme por WhatsApp",
     email: "contacto.somament@gmail.com",
     instagram: "https://instagram.com/estibaliz.mujeralquimia",
-    instagramLabel: "Instagram"
+    instagramLabel: "Instagram",
+    /* Map (Google Maps) */
+    mapTitle: "Dónde encontrarme",
+    address: "Carrer de Pujades, 27, esc. izq. 6º 1ª\n08018 Barcelona",   // text shown above the map (\n = new line)
+    mapQuery: "Carrer de Pujades 27, 08018 Barcelona, España",          // what Google Maps searches for (keep it simple: street, number, city)
+    mapButton: "Abrir en Google Maps"
   },
 
   /* ---------- Footer ---------- */

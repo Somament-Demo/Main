@@ -25,9 +25,9 @@ window.SITE = {
 
   /* ---------- Home page ---------- */
   home: {
-    eyebrow: "TERAPIA SOMÁTICA & ENERGÉTICA\nREIKI · TAROT\nCANALIZACIÓN\nLIMPIEZA ENERGÉTICA",
+    eyebrow: "TERAPIA SOMÁTICA · REIKI · TAROT\nCANALIZACIÓN · LIMPIEZA ENERGÉTICA\nRITUAL ALQUIMIA",
     title: "Te acompaño en tu propio proceso alquímico",
-    text: "Sesiones de autoconocimiento, liberación, sanación y transformación.\nUn espacio para reconectar contigo y recuperar tu soberanía.",
+    text: "Sesiones de autoconocimiento, liberación y transformación.\nUn espacio para reconectar contigo y recuperar tu soberanía.",
     button: "Quiero reservar una sesión",
     /* Hero picture. Three ways to set it up (choose with imageStyle):
        "fade"   = photo on the right that fades into the beige (current)
@@ -286,7 +286,7 @@ window.SITE = {
     text: "Escríbeme y encontramos juntas la sesión que mejor te acompañe.",
     whatsappLabel: "Escríbeme por WhatsApp",
     email: "contacto.somament@gmail.com",
-    instagram: "https://instagram.com/estibaliz.mujeralquimia",
+    instagram: "https://www.instagram.com/estibalizalquimia",
     instagramLabel: "Instagram",
     /* Map (Google Maps) */
     mapTitle: "Dónde encontrarme",

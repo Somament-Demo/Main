@@ -289,7 +289,7 @@ window.SITE = {
     title: "Contacto",
     text: "Escríbeme y encontramos juntas la sesión que mejor te acompañe.",
     whatsappLabel: "Escríbeme por WhatsApp",
-    email: "contacto.somament@gmail.com",
+    email: "estibalizalquimia@gmail.com",
     instagram: "https://www.instagram.com/estibalizalquimia",
     instagramLabel: "Instagram",
     /* Map (Google Maps) */

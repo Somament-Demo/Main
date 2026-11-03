@@ -136,6 +136,7 @@
         ${s.quote ? `<div class="quote">${esc(s.quote)}</div>` : ""}
         ${(s.paragraphs || []).map((p) => `<p>${rich(p)}</p>`).join("")}
         ${s.bullets && s.bullets.length ? `<ul class="points">${s.bullets.map((b) => `<li>${rich(b)}</li>`).join("")}</ul>` : ""}
+        ${(s.afterBullets || []).map((p) => `<p>${rich(p)}</p>`).join("")}
         ${s.closing ? `<div class="quote closing">${esc(s.closing)}</div>` : ""}
         <div class="meta"><span>${ICONS.clock}${esc(s.duration)}</span><span>${ICONS.pin}${esc(s.location)}</span></div>
         <div class="prices">Online <b>${esc(s.priceOnline)}</b><span class="dot">·</span>Presencial <b>${esc(s.pricePresencial)}</b></div>
@@ -206,9 +207,34 @@
         ${c.address ? `<p class="address">${ICONS.pin}<span>${nl(c.address)}</span></p>` : ""}
         <iframe class="map" title="${esc(c.mapTitle)}" loading="lazy" referrerpolicy="no-referrer-when-downgrade" allowfullscreen
           src="https://www.google.com/maps?q=${encodeURIComponent(c.mapQuery)}&z=16&output=embed"></iframe>
-        <a class="btn outline" href="https://www.google.com/maps/search/?api=1&query=${encodeURIComponent(c.mapQuery)}" target="_blank" rel="noopener">${esc(c.mapButton || "Abrir en Google Maps")}${ARROW}</a>
+        <a class="btn outline" href="${esc(c.mapUrl || `https://www.google.com/maps/search/?api=1&query=${encodeURIComponent(c.mapQuery)}`)}" target="_blank" rel="noopener">${esc(c.mapButton || "Abrir en Google Maps")}${ARROW}</a>
       </div>` : ""}
     </div></div></section>`;
+  }
+
+  if (page === "reviews") {
+    const r = S.reviews;
+    const stars = (n) => `<span class="stars" aria-label="${n} / 5">${"★".repeat(n)}${"☆".repeat(5 - n)}</span>`;
+    $("app").innerHTML = `
+    <section class="page"><div class="wrap">
+      <div class="reviews-head">
+        <h1>${nl(r.title)}</h1>
+        <p>${nl(r.text)}</p>
+        ${r.summary ? `<p class="reviews-summary">${stars(5)} <span>${esc(r.summary)}</span></p>` : ""}
+      </div>
+      <div class="reviews">
+        ${r.items.map((i) => `
+        <figure class="review">
+          ${stars(i.stars || 5)}
+          <blockquote>${nl(i.text)}</blockquote>
+          <figcaption><strong>${esc(i.name)}</strong>${i.role ? `<span>${esc(i.role)}</span>` : ""}</figcaption>
+        </figure>`).join("")}
+      </div>
+      <div class="reviews-foot">
+        ${r.note ? `<p class="note">${esc(r.note)}</p>` : ""}
+        ${r.googleUrl ? `<a class="btn outline" href="${esc(r.googleUrl)}" target="_blank" rel="noopener">${esc(r.googleButton || "Ver todas las reseñas en Google")}${ARROW}</a>` : ""}
+      </div>
+    </div></section>`;
   }
 
   header();

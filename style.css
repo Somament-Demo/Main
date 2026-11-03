@@ -12,7 +12,7 @@
   --font-script: "Caveat", cursive;
 }
 /* The session pages use the green theme */
-body.page-session, body.page-about, body.page-contact {
+body.page-session, body.page-about, body.page-contact, body.page-reviews {
   --bg: #f6f0e3;
   --bg-soft: #efe6d6;
   --heading: #4a4a3a;
@@ -37,8 +37,10 @@ h1, h2, h3 { font-family: var(--font-serif); font-weight: 500; color: var(--head
 .logo { font-family: var(--font-serif); color: var(--heading); font-size: 34px; letter-spacing: .22em; line-height: 1; }
 .logo small { display: block; font-family: var(--font-sans); font-size: 11px; letter-spacing: .2em; margin-top: 4px; opacity: .8; }
 .nav { display: flex; gap: 34px; flex: 1; margin-left: 40px; }
+.nav a, .header-book { white-space: nowrap; }
 .nav a { font-size: 14px; padding: 4px 0; border-bottom: 1px solid transparent; }
 .nav a.active, .nav a:hover { border-color: var(--accent); }
+@media (min-width: 861px) and (max-width: 1100px) { .nav { gap: 18px; margin-left: 18px; } .header-book { padding: 11px 16px; } }   /* 5 menu items need a bit less space */
 .menu-toggle { display: none; background: none; border: 0; font-size: 28px; color: var(--heading); cursor: pointer; }
 
 /* ---------- Buttons ---------- */
@@ -155,6 +157,19 @@ body.page-about .hero-img::before { background: linear-gradient(90deg, var(--bg-
 .page p { margin-bottom: 16px; font-size: 17px; }
 .page .links { display: flex; gap: 16px; flex-wrap: wrap; margin-top: 28px; }
 
+/* Reseñas page */
+.reviews-head { max-width: 720px; margin-bottom: 40px; }
+.reviews-summary { display: flex; align-items: center; gap: 12px; font-size: 16px; color: var(--accent); }
+.stars { color: #c9a24a; letter-spacing: .12em; font-size: 17px; }
+.reviews { columns: 3 300px; column-gap: 24px; }
+.review { break-inside: avoid; margin: 0 0 24px; padding: 26px 26px 22px; background: var(--bg-soft); border: 1px solid var(--line); border-radius: 4px; }
+.review blockquote { margin: 12px 0 18px; font-family: var(--font-serif); font-size: 19px; line-height: 1.55; color: var(--heading); }
+.review figcaption { font-size: 14px; display: flex; flex-direction: column; }
+.review figcaption strong { font-weight: 400; color: var(--accent); }
+.review figcaption span { color: #8a8470; font-size: 13px; }
+.reviews-foot { margin-top: 20px; text-align: center; }
+.reviews-foot .note { font-size: 14px; color: #8a8470; margin-bottom: 18px; }
+
 /* Contact page: location + Google map */
 .page .narrow { max-width: 720px; }
 .location { margin-top: 56px; padding-top: 44px; border-top: 1px solid var(--line); }
@@ -196,6 +211,7 @@ body:not(.page-session):not(.page-about):not(.page-contact) .site-footer { backg
 }
 
 /* The logo name is long: make it a bit smaller on narrower screens so the header never overflows */
-@media (max-width: 1150px) { .logo { font-size: 26px; letter-spacing: .14em; } }
+@media (max-width: 1300px) { .logo { font-size: 26px; letter-spacing: .14em; } }
+@media (min-width: 861px) and (max-width: 1000px) { .logo { font-size: 19px; letter-spacing: .08em; } }
 @media (max-width: 860px) { .logo { font-size: 21px; letter-spacing: .1em; } }
 @media (max-width: 860px) { .site-footer .txt { font-size: 16px; letter-spacing: .14em; } }

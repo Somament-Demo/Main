@@ -20,6 +20,7 @@ window.SITE = {
     { label: "Inicio",   href: "index.html" },
     { label: "Sesiones", href: "index.html#sesiones" },
     { label: "Sobre mí", href: "sobre-mi.html" },
+    { label: "Reseñas", href: "resenas.html" },
     { label: "Contacto", href: "contacto.html" }
   ],
 
@@ -163,6 +164,9 @@ window.SITE = {
         "**Línea de tiempo:** edades, lugares y vivencias significativas que emergen durante la canalización y que pueden aportar una nueva mirada a tu presente.",
         "**Linaje familiar:** canalizo información del campo de tus padres y familiares, explorando sus historias, las vivencias de su infancia y los patrones que pueden resonar en tu propia vida, estén vivos o hayan fallecido.",
         "**Vínculos relacionales:** exploramos tus relaciones pasadas y presentes, las dinámicas y lealtades que pueden ayudarte a comprender tu historia y tu manera de vincularte."
+      ],
+      afterBullets: [
+        "**Durante la sesión se realiza trabajo energético a la persona, canalizada, al vínculo o a la experiencia vivida.**"
       ],
       closing: "Dale espacio a tu historia y a tu linaje para reconectar contigo y recuperar tu soberanía.",
       duration: "60 minutos",

@@ -66,7 +66,7 @@ body.page-session .hero h1, body.page-about .hero h1 { font-size: clamp(34px, 4v
 .hero.style-full .hero-img { width: 100%; background-position: center right; }
 .hero.style-full .hero-img::before { display: none; }
 /* "cutout": a woman PNG with transparent background, placed over the background */
-.hero.style-cutout .hero-img { width: 56%; background-color: transparent; background-size: contain; background-repeat: no-repeat; background-position: 55% bottom; }
+.hero.style-cutout .hero-img { width: 64%; background-color: transparent; background-size: auto 125%; background-repeat: no-repeat; background-position: 62% bottom; }   /* 125% = woman bigger than the banner height (the empty space above her head is cut off); raise/lower this number to resize */
 .hero.style-cutout .hero-img::before { display: none; }
 .hero.style-cutout .hero-quote { right: auto; left: max(44%, calc(50% - 10px)); top: 30%; }
 @media (max-width: 860px) {

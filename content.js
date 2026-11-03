@@ -25,9 +25,9 @@ window.SITE = {
 
   /* ---------- Home page ---------- */
   home: {
-    eyebrow: "TERAPIA SOMÁTICA · REIKI · TAROT\nCANALIZACIÓN · LIMPIEZA ENERGÉTICA\nRITUAL ALQUIMIA",
+    eyebrow: "TERAPIA SOMÁTICA & ENERGÉTICA\nREIKI · TAROT\nCANALIZACIÓN\nLIMPIEZA ENERGÉTICA",
     title: "Te acompaño en tu propio proceso alquímico",
-    text: "Sesiones de autoconocimiento, liberación y transformación.\nUn espacio para reconectar contigo y recuperar tu soberanía.",
+    text: "Sesiones de autoconocimiento, liberación, sanación y transformación.\nUn espacio para reconectar contigo y recuperar tu soberanía.",
     button: "Quiero reservar una sesión",
     /* Hero picture. Three ways to set it up (choose with imageStyle):
        "fade"   = photo on the right that fades into the beige (current)

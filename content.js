@@ -26,7 +26,7 @@ window.SITE = {
 
   /* ---------- Home page ---------- */
   home: {
-    eyebrow: "TERAPIA SOMÁTICA · REIKI · TAROT\nCANALIZACIÓN · LIMPIEZA ENERGÉTICA\nRITUAL ALQUIMIA",
+    eyebrow: "TERAPIA SOMÁTICA & ENERGÉTICA\nREIKI · TAROT\nCANALIZACIÓN\nLIMPIEZA ENERGÉTICA",
     title: "Te acompaño en tu propio proceso alquímico",
     text: "Sesiones de autoconocimiento, liberación y transformación.\nUn espacio para reconectar contigo y recuperar tu soberanía.",
     button: "Quiero reservar una sesión",
@@ -276,7 +276,7 @@ window.SITE = {
         imagePosition: "center 30%",
         title: "Mi formación,\nmi recorrido",
         paragraphs: [
-          "Me he formado como Terapeuta Integrativa Somática, Psicoterapia Sensoriomotriz con enfoque sensible al trauma, también he profundizado con formaciones en Neurobiología Interpersonal, Mindfulness y Comunicación No Violenta.",
+          "Formada en Terapia Integrativa y Somática, y formaciones en Psicoterapia Sensoriomotriz con enfoque sensible al trauma, también he profundizado con formaciones en Neurobiología Interpersonal, Mindfulness y Comunicación No Violenta.",
           "Mi camino personal de sanación me acercó a las plantas maestras, a través de las cuales viví una experiencia profundamente terapéutica. Más adelante, mi búsqueda espiritual me llevó a conocer y aprender de las tradiciones, ceremonias y rituales ancestrales de distintos sabedores indígenas, con quienes continúo aprendiendo en mi camino como mujer medicina, acogiendo sus conocimientos y enseñanzas con profunda humildad, gratitud y respeto.",
           "Este recorrido ha enriquecido mi práctica terapéutica, ampliando mi mirada e incorporando una dimensión energética y espiritual que dialoga con mi formación psicológica y somática."
         ]
@@ -295,7 +295,8 @@ window.SITE = {
     /* Map (Google Maps) */
     mapTitle: "Dónde encontrarme",
     address: "Carrer de Pujades, 27, esc. izq. 6º 1ª\n08018 Barcelona",   // text shown above the map (\n = new line)
-    mapQuery: "Carrer de Pujades 27, 08018 Barcelona, España",          // what Google Maps searches for (keep it simple: street, number, city)
+    mapQuery: "41.3942239,2.1903321",                                   // exact spot shown on the map (latitude,longitude)
+    mapUrl: "https://www.google.com/maps/place/EstibalizAlquimia+%F0%9F%8C%BF+Somatic+%26+Energetic+Therapy,+Shamanic+Reiki,+Transpersonal+Tarot+and+Energy+Cleansing./@41.3942239,2.1903321,17z/data=!4m16!1m9!3m8!1s0x21ed8da316d9a655:0xafae8b8bbbfdfa0d!2sEstibalizAlquimia+%F0%9F%8C%BF+Somatic+%26+Energetic+Therapy,+Shamanic+Reiki,+Transpersonal+Tarot+and+Energy+Cleansing.!8m2!3d41.3942239!4d2.1903321!9m1!1b1!16s%2Fg%2F11vrvfbw17",   // where the "Abrir en Google Maps" button goes
     mapButton: "Abrir en Google Maps"
   },
 

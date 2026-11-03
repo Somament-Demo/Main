@@ -24,6 +24,17 @@
   const ARROW = " →";
   const HEART = '<svg viewBox="0 0 24 24"><path d="M12 20S4 15 4 9.500C4 7 6 5.500 8 5.500c2 0 4 2.500 4 2.500s2-2.500 4-2.500c2 0 4 1.500 4 4C20 15 12 20 12 20z"/></svg>';
 
+  /* SEO: set page title / description / address for pages whose text comes from content.js */
+  const SITE_URL = "https://estibalizalquimia.es";   // change here if the domain changes
+  const setMeta = (sel, attr, val) => { const e = document.querySelector(sel); if (e) e.setAttribute(attr, val); };
+  const seo = (title, desc, path) => {
+    document.title = title;
+    setMeta('meta[name="description"]', "content", desc);
+    setMeta('meta[property="og:title"]', "content", title);
+    setMeta('meta[property="og:description"]', "content", desc);
+    setMeta('link[rel="canonical"]', "href", SITE_URL + "/" + path);
+    setMeta('meta[property="og:url"]', "content", SITE_URL + "/" + path);
+  };
   const waLink = () => `https://wa.me/${S.brand.whatsapp}?text=${encodeURIComponent(S.brand.whatsappMessage)}`;
   const page = document.body.dataset.page;
 
@@ -117,7 +128,9 @@
   if (page === "session") {
     const id = new URLSearchParams(location.search).get("s");
     const s = S.sessions.find((x) => x.id === id) || S.sessions[0];
-    document.title = `${s.name} · ${S.brand.name}`;
+    seo(`${s.name} en Barcelona · ${S.brand.name}`,
+        `${s.name} en Barcelona. ${s.short.replace(/\n/g, " ")} Sesión presencial u online con Estíbaliz.`,
+        `sesion.html?s=${s.id}`);
     $("app").innerHTML = `
     <section class="hero">
       <div class="wrap"><div class="hero-text">
@@ -151,7 +164,7 @@
 
   if (page === "about") {
     const a = S.aboutPage;
-    document.title = `Sobre mí · ${S.brand.name}`;
+    seo(`Sobre mí · Estíbaliz, terapeuta en Barcelona · ${S.brand.name}`, document.querySelector('meta[name="description"]').content, "sobre-mi.html");
     $("app").innerHTML = `
     <section class="hero">
       <div class="wrap"><div class="hero-text">

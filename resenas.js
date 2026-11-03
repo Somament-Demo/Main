@@ -16,6 +16,8 @@ window.SITE.reviews = {
   items: [
     { name: "Veronica Vazquez Savareikas", stars: 5,
       text: "Tuve una experiencia muy especial con la sesión de canalización. Me sorprendió muchísimo lo acertada que fue, ya que se mencionaron aspectos muy personales de mi vida con los que me sentí profundamente identificada. Fue una experiencia reveladora, llena de mensajes que resonaron conmigo y me hicieron reflexionar. Me quedé con una sensación muy bonita y agradecida por lo vivido. Sin duda, una experiencia que recomiendo. ✨💫" },
+    { name: "Jesus Porras Vico", stars: 5,
+      text: "He tenido una sesión de limpieza energética y otra de canalización con Estíbaliz, me ha dado la oportunidad de revisar muy para adentro mis vivencias y emociones de toda mi niñez incrustadas y he limpiado muchísimo mis traumas de la niñez que me impedían avanzar, es la mejor limpieza energética y canalización que he tenido con diferencia. Se nota su camino chamánico y su responsabilidad y cuidado 💚 la super recomiendo sin duda! Repetiré sin duda!" },
     { name: "Marine d'Amico", stars: 5,
       text: "Hace unos meses, empecé las sesiones con Estivali, y es simplemente increíble. Además de ser un ser de luz, me guió para reconectarme conmigo misma y con mis emociones; me acompañó en decisiones y cambios importantes para mí. No puedo estar más agradecida de haberla conocido y de que me acompañe en este proceso de trabajo y crecimiento personal." },
     { name: "Carlos A. Maestre", stars: 5, role: "Local Guide",

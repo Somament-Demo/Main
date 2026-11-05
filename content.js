@@ -28,7 +28,7 @@ window.SITE = {
   home: {
     eyebrow: "TERAPIA SOMÁTICA & ENERGÉTICA\nREIKI · TAROT\nCANALIZACIÓN\nLIMPIEZA ENERGÉTICA",
     title: "Te acompaño en tu propio proceso alquímico",
-    text: "Sesiones de autoconocimiento, liberación y transformación.\nUn espacio para reconectar contigo y recuperar tu soberanía.",
+    text: "Sesiones de autoconocimiento, liberación, sanación y transformación.\nUn espacio para reconectar contigo y recuperar tu soberanía.",
     button: "Quiero reservar una sesión",
     /* Hero picture. Three ways to set it up (choose with imageStyle):
        "fade"   = photo on the right that fades into the beige (current)
@@ -62,6 +62,7 @@ window.SITE = {
   sessions: [
     {
       id: "somatica",
+      page: "terapia-somatica-barcelona.html",                      // file name of this session's own page (see the .html file with this name)
       name: "Terapia Somática",
       icon: "flower",
       short: "Conecta con tu cuerpo, libera patrones\ny recupera el equilibrio.",
@@ -80,13 +81,14 @@ window.SITE = {
         "Un acompañamiento personalizado de profundo autoconocimiento para conectar con tu cuerpo y adentrarte en un proceso de autodescubrimiento, explorando y atendiendo aquello que emerge durante la sesión. Cada sesión es única y se adapta a tus necesidades y a lo que emerge en cada encuentro."
       ],
       duration: "60 minutos",
-      location: "Online · Presencial · Con cita previa",
+      location: "Barcelona · Online · Con cita previa",
       priceOnline: "88 €",
       pricePresencial: "99 €",
       special: "Tarifa especial para personas residentes en países de Centroamérica y Sudamérica con bajos ingresos: 55 €."
     },
     {
       id: "reiki",                           // used in the page address: sesion.html?s=reiki
+      page: "reiki-chamanico-barcelona.html",                      // file name of this session's own page (see the .html file with this name)
       name: "Reiki Chamánico",
       icon: "spiral",
       short: "Armoniza tu energía, calma tu mente\ny abre espacio a lo nuevo.",
@@ -105,13 +107,14 @@ window.SITE = {
         "Durante la sesión realizo un trabajo de ajuste, reestructuración y armonización, utilizando cristales, péndulo, aromas e instrumentos como parte del proceso. Cada encuentro es único y personalizado, atendiendo a lo que emerge durante la sesión y a las necesidades de cada momento."
       ],
       duration: "60 minutos",
-      location: "Online · Presencial · Con cita previa",
+      location: "Barcelona · Online · Con cita previa",
       priceOnline: "88 €",
       pricePresencial: "99 €",
       special: "Tarifa especial para personas residentes en países de Centroamérica y Sudamérica con bajos ingresos: 55 €."
     },
     {
       id: "tarot",
+      page: "tarot-transpersonal-barcelona.html",                      // file name of this session's own page (see the .html file with this name)
       name: "Tarot Transpersonal",
       icon: "moon",
       short: "Una guía para tomar conciencia\ny ver con más claridad tu camino.",
@@ -137,13 +140,14 @@ window.SITE = {
       ],
       closing: "Una invitación a mirar más allá de lo evidente, comprender tu presente y recuperar tu soberanía personal.",
       duration: "60 minutos",
-      location: "Online · Presencial · Con cita previa",
+      location: "Barcelona · Online · Con cita previa",
       priceOnline: "88 €",
       pricePresencial: "99 €",
       special: "Tarifa especial para personas residentes en países de Centroamérica y Sudamérica con bajos ingresos: 55 €."
     },
     {
       id: "canalizacion",
+      page: "canalizacion-psicosomatica-barcelona.html",                      // file name of this session's own page (see the .html file with this name)
       name: "Canalización Psicosomática",
       icon: "lotus",
       short: "Una lectura canalizada de tu campo,\nfísico, emocional y energético.",
@@ -170,13 +174,14 @@ window.SITE = {
       ],
       closing: "Dale espacio a tu historia y a tu linaje para reconectar contigo y recuperar tu soberanía.",
       duration: "60 minutos",
-      location: "Online · Presencial · Con cita previa",
+      location: "Barcelona · Online · Con cita previa",
       priceOnline: "88 €",
       pricePresencial: "99 €",
       special: "Tarifa especial para personas residentes en países de Centroamérica y Sudamérica con bajos ingresos: 55 €."
     },
     {
       id: "limpieza",
+      page: "limpieza-energetica-barcelona.html",                      // file name of this session's own page (see the .html file with this name)
       name: "Limpieza Energética",
       icon: "leaf",
       short: "Limpieza, armonización y protección chamánica\nde personas y espacios.",
@@ -194,7 +199,7 @@ window.SITE = {
         "**Opcional (solo presencial):** baño de florecimiento con flores frescas, hierbas dulces, esencias y resinas después de la limpieza energética profunda. Es una práctica chamánica de una comunidad indígena de la Amazonía, utilizada para renovar el espíritu, atraer estados de bienestar, prosperidad y apertura vital."
       ],
       duration: "60 minutos (90 minutos con baño de florecimiento)",
-      location: "Online · Presencial · Con cita previa",
+      location: "Barcelona · Online · Con cita previa",
       priceOnline: "88 €",
       pricePresencial: "99 €",
       priceExtra: "Limpieza + baño de florecimiento (solo presencial): **111 €**",
@@ -203,6 +208,7 @@ window.SITE = {
     },
     {
       id: "ritual-alquimia",
+      page: "ritual-alquimia-barcelona.html",                      // file name of this session's own page (see the .html file with this name)
       name: "Ritual Alquimia",
       icon: "sun",
       short: "Una experiencia integrativa y alquímica\npara tu cuerpo, mente y espíritu.",
@@ -225,7 +231,7 @@ window.SITE = {
         "**Tarot transpersonal:** una herramienta de exploración y reflexión para abrir nuevas perspectivas y profundizar en tu mundo interno."
       ],
       duration: "90 minutos",
-      location: "Online · Presencial · Con cita previa",
+      location: "Barcelona · Online · Con cita previa",
       priceOnline: "99 €",
       pricePresencial: "111 €",
       special: "Tarifa especial para personas residentes en países de Centroamérica y Sudamérica con bajos ingresos: 77 €."
@@ -276,7 +282,7 @@ window.SITE = {
         imagePosition: "center 30%",
         title: "Mi formación,\nmi recorrido",
         paragraphs: [
-          "Formada en Terapia Integrativa y Somática, y formaciones en Psicoterapia Sensoriomotriz con enfoque sensible al trauma, también he profundizado con formaciones en Neurobiología Interpersonal, Mindfulness y Comunicación No Violenta.",
+          "Formada en Terapia Integrativa y Somática, y formaciones en Psicoterapia Sensoriomotriz (con enfoque sensible al trauma), en Neurobiología Interpersonal, Mindfulness y Comunicación No Violenta.",
           "Mi camino personal de sanación me acercó a las plantas maestras, a través de las cuales viví una experiencia profundamente terapéutica. Más adelante, mi búsqueda espiritual me llevó a conocer y aprender de las tradiciones, ceremonias y rituales ancestrales de distintos sabedores indígenas, con quienes continúo aprendiendo en mi camino como mujer medicina, acogiendo sus conocimientos y enseñanzas con profunda humildad, gratitud y respeto.",
           "Este recorrido ha enriquecido mi práctica terapéutica, ampliando mi mirada e incorporando una dimensión energética y espiritual que dialoga con mi formación psicológica y somática."
         ]

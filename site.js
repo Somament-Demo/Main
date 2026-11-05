@@ -114,7 +114,7 @@
       <p class="sub">${nl(S.sessionsIntro.text)}</p>
       <div class="cards">
         ${S.sessions.map((s) => `
-          <a class="card" href="sesion.html?s=${esc(s.id)}">
+          <a class="card" href="${esc(s.page || `sesion.html?s=${s.id}`)}">
             <div class="icon">${ICONS[s.icon] || ""}</div>
             <h3>${nl(s.name)}</h3>
             <p>${nl(s.short)}</p>
@@ -126,11 +126,13 @@
   }
 
   if (page === "session") {
-    const id = new URLSearchParams(location.search).get("s");
+    /* Each session has its own page (body has data-session="<id>"). The old address sesion.html?s=<id> forwards to it. */
+    const id = document.body.dataset.session || new URLSearchParams(location.search).get("s");
     const s = S.sessions.find((x) => x.id === id) || S.sessions[0];
+    if (!document.body.dataset.session && s.page) { location.replace(s.page); return; }
     seo(`${s.name} en Barcelona · ${S.brand.name}`,
         `${s.name} en Barcelona. ${s.short.replace(/\n/g, " ")} Sesión presencial u online con Estíbaliz.`,
-        `sesion.html?s=${s.id}`);
+        s.page || `sesion.html?s=${s.id}`);
     $("app").innerHTML = `
     <section class="hero">
       <div class="wrap"><div class="hero-text">
